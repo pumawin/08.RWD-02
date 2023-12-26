@@ -1,0 +1,295 @@
+@charset 'utf-8';
+
+/* visual */
+.visual {
+  height: 46rem;
+  background: url(../img/main-img.jpg) no-repeat 100% 0 / contain /* 배경의 위치이다. */;
+}
+
+.visual-title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 69rem;
+  width: 58.4746%;
+
+  /* background: #5f5; */
+}
+.visual-title h2 {
+  font-weight: 700;
+  font-size: 4.8rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.visual-title h2 strong {
+  color: var(--main-color);
+}
+.visual-title p {
+  font-weight: 500;
+  font-size: 2rem;
+  margin-top: 2.4rem;
+}
+.visual-title .cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 4.8rem;
+  background: var(--main-color);
+  color: #fff;
+  font-weight: 700;
+  margin-top: 3.2rem;
+}
+
+/* 세션별 일괄조정 */
+#container section {
+  padding: 9rem 0 9rem;
+} /* 패딩을 일일히 잡기 어려울때는 세션 전체값을 기준으로 잡아주면 된다.
+고정시켜놔야 페이지가 흔들리지 않는다. */
+#container section h3 {
+  font-weight: 500;
+  font-size: 3.2rem;
+  color: var(--main-color);
+}
+#container section h3 + p {
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--title-color);
+  margin-top: 0.4rem;
+}
+#container section h4 {
+  font-weight: 500;
+  font-size: 2.8rem;
+  color: var(--main-color);
+}
+
+/* 사업영역 소개 */
+.business-list {
+  /* background: #5f5; */
+  display: flex;
+  justify-content: space-between;
+}
+.business-list li {
+  border: 1px solid var(--line-color);
+  width: 28rem;
+  width: 23.7288%;
+  height: 30.2rem;
+  min-height: 30.2rem;
+  background: #fff;
+  box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.05);
+  padding: 2.8rem 3.2rem;
+}
+.business-list li dl dt {
+  color: var(--main-color-dark, #1f60b8);
+  font-family: Jost;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3r; /* 26px */
+}
+.business-list li dl dd {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: 1.2rem; /* 24px */
+}
+.business-list li dl dt + dd:first-child {
+  margin-top: 2rem;
+}
+
+/* 포트폴리오 */
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.works-list li {
+  /*  */
+  width: 50%; /* 딱 반이기 때문에 재지 않아도 50%이다. */
+  height: 26rem;
+  position: relative;
+}
+.works-list li figure {
+  width: 100%;
+  height: 100%;
+}
+.works-list li figure::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.works-list li figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 조상에게 계속 내려받는중 */
+}
+.works-list li p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background: #5f5; */
+  font-weight: 500;
+  font-size: 2.4rem;
+  color: #fff;
+  text-align: center;
+  width: 90%; /* 공간에서 글자가 몇퍼센트를 차지할 것인가를 나타낸다. */
+}
+
+.works-list li p strong {
+  font-weight: 700;
+  display: block;
+}
+
+/* 뉴스 */
+.news-con {
+  display: flex;
+  justify-content: space-between;
+}
+.news-text {
+  width: 48rem;
+  width: 40.678%;
+  margin-top: 1.1rem;
+}
+.news-con figure {
+  width: 64rem;
+  width: 54.2373%;
+}
+.news-text strong {
+  display: block;
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-top: 1.8rem;
+  visibility: var(--title-color);
+}
+.news-text p {
+  margin-top: 1.8rem;
+  line-height: 1.7;
+}
+
+/* column */
+.column h4 + strong {
+  font-weight: 700;
+  font-size: 3.2rem;
+  visibility: var(--title-color);
+  display: block;
+  margin-top: 1.8rem;
+}
+.column p {
+  margin-top: 1.8rem;
+  line-height: 1.7;
+  column-count: 2;
+  column-gap: 5rem;
+}
+.column p + p {
+  font-weight: 500;
+  text-align: right;
+  margin-top: 1.8rem;
+  column-count: 1;
+} /* 오른쪽으로 보내는 주문이다. */
+.column p + p em {
+  display: block;
+  font-weight: 700;
+}
+
+/* 반응형 분기점 */
+@media (max-width: 1180px) {
+  .visual {
+    height: 64rem;
+    background-position: 50% 0;
+    background-size: cover;
+  }
+  .visual-title {
+    width: 70%;
+  }
+}
+
+/* 태블릿 디자인 */
+@media (max-width: 1024px) {
+  .visual {
+    height: auto;
+    aspect-ratio: 1/0.625;
+  }
+  .visual-title {
+    width: 46rem;
+    width: 47.5207%;
+    width: 44.9219vw;
+  }
+  .visual-title h2 {
+    font-size: 4.2685vw;
+  }
+
+  #container section {
+    padding: 5rem 0;
+  }
+  .business-list {
+    flex-wrap: wrap;
+    row-gap: 2rem;
+  }
+  .business-list li {
+    width: 47.4rem;
+    width: 48.967%;
+    min-height: 28rem;
+  }
+  .works-list li {
+    height: auto; /* ha */
+    aspect-ratio: 1/0.5372; /* asr 세로나누기 가로를 해서 비율을 유지한채 
+    작아지게 하는 명령어 이다.*/
+  }
+  .news-text {
+    width: 47.4rem;
+    width: 48.967%;
+  }
+  .news-con figure {
+    width: 47.4rem;
+    width: 48.967%;
+  }
+  .column p {
+    column-count: 1;
+  }
+}
+/* 분기사이를 점검한 후에 필요하면 추가. */
+@media (max-width: 900px) {
+  .news-con {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .news-text,
+  .news-con figure {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .visual {
+    aspect-ratio: 1/1.2308;
+  }
+  .visual-title {
+    width: 100%;
+    text-align: center;
+  }
+  .visual-title h2 {
+    font-size: 3rem;
+  }
+  .business-list li {
+    width: 100%;
+  }
+  .works-list li {
+    width: 100%;
+  }
+  .news-con {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .news-text,
+  .news-con figure {
+    width: 100%;
+  }
+  .column h4 + strong {
+    font-size: 2.4rem;
+  }
+}
